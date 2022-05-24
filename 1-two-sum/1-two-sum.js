@@ -33,7 +33,8 @@ let twoSum = (nums, target) => {
             //--subtract target by nums and equals index
             memory[target-nums[i]] = i
         }else{
-            return [i, memory[nums[i]]]
+            //--if it does return the 2 indeces that add to target
+            return [memory[nums[i]],i]
         }
     }
  
