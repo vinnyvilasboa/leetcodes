@@ -20,6 +20,7 @@ var merge = function(nums1, m, nums2, n) {
             first--
 
         }else {
+            //since everything is still going into the first array then we loop through the second one still
             nums1[i] = nums2[second];
             second--
         }
