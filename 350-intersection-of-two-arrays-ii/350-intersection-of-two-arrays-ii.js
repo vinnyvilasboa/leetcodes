@@ -4,15 +4,27 @@
  * @return {number[]}
  */
 var intersect = function(nums1, nums2) {
-    res = []
-    for(i of nums2) {
-        if(nums1.includes(i)){
-            res.push(i)
-            nums1[nums1.indexOf(i)] = ""
+    let obj = {}
+    let result = []
+    
+    for (let i of nums1){
+        if(!obj[i]){
+            obj[i] = 1
+        
+        } else {
+            obj[i]++
         }
     }
-    return res
-};
+    console.log(obj)
+
+    for (let i of nums2){
+        if (obj[i] > 0){
+            result.push(i)
+            obj[i]--
+        }
+    }
+    return(result)
+}
 
 
 /*
