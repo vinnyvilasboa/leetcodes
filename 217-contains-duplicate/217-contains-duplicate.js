@@ -2,13 +2,22 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-//new Set -> set can't have duplicate values
-//compare size of array with size of new set 
 var containsDuplicate = function(nums) {
-    let newSet = new Set(nums)
-    if(nums.length !== newSet.size){
-        return true
-    }else return false
-    
-};
-containsDuplicate([1,2,3,1])
+    //hash table created
+    let hash = {};
+    //loop through nums
+    for(let i = 0; i < nums.length; i++){
+        //new variable to hold nums index
+       let aNum = nums[i]
+       //if nums index is inside return true
+       if(hash[aNum]){
+           return true 
+       }else{
+           //if it's not push it inside
+           hash[aNum] = true
+       }
+    }
+    //if none match return false
+    return false
+}
+
