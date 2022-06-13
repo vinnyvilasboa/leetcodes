@@ -3,40 +3,30 @@
  * @param {number} target
  * @return {number[]}
  */
-//--> O(N^2)
-// var twoSum = function(nums, target) {
-//     //for loop starting at 0
-//     //for loop at 1
-//     //if i + j = target return i & j 
-//     for (let i=0; i < nums.length; i++){
-//         for(let j=i+1; j < nums.length; j++){
-//             let sum = nums[i] + nums[j]
-//             if(sum === target){
-//                 return[i,j]
-//             }
-//         }
-//     }
-    
-    
-// }
-// [1,2,3,6,11], 5
-// target - nums[i] 
-//
+
+/*Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+how many solutions are possible?
+can i use the same element twice?
+what order done does the answer need to be in?
+
+-> Curve balls: 
+*/
+
+/*BRUTE FORCE
+loop 1 -> i = 0 
+loop 2 -> j = i + 1 
+if loop1 + loop2 === target 
+return [loop1, loop2]
+*/
 
 
 let twoSum = (nums, target) => {
-//
-    let memory ={}
-    for (let i = 0; i < nums.length; i++){
-        //-- if the position doesn't exist 
-        if(memory[nums[i]] === undefined){
-            //--subtract target by nums and equals index
-            memory[target-nums[i]] = i
-        }else{
-            //--if it does return the 2 indeces that add to target
-            return [memory[nums[i]],i]
+    for(let i = 0; i < nums.length; i++){
+        for(let j = i + 1; j < nums.length;j++){
+            if(nums[i] + nums[j] === target){
+                return [i,j]
+            }
         }
     }
- 
-    
-}
+};
