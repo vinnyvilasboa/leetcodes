@@ -18,21 +18,44 @@
 //     return result
 // };
 
+// var fizzBuzz = function(n) {
+//     let result = []
+//     for (let i = 1; i <= n; i++){
+//         let str = '';
+//         if(i % 3 === 0){
+//             str += 'Fizz'
+//         }
+//         if(i % 5 === 0){
+//             str += 'Buzz'
+//         }
+//         if(str.length === 0){
+//             str += i;
+//         }
+//         result.push(str)
+//     }
+//     return result;
+    
+// };
+
 var fizzBuzz = function(n) {
-    let result = []
-    for (let i = 1; i <= n; i++){
+    let res = []
+    let map = {
+        3: 'Fizz',
+        5: 'Buzz'
+    }
+    
+    for(let i = 1; i <= n; i++){
         let str = '';
-        if(i % 3 === 0){
-            str += 'Fizz'
-        }
-        if(i % 5 === 0){
-            str += 'Buzz'
+        for(let key in map){
+            if(i % parseInt(key,10) === 0){
+                str += map[key]
+            }
         }
         if(str.length === 0){
-            str += i;
+            str += i
         }
-        result.push(str)
+        res.push(str)
     }
-    return result
+    return res
     
 };
