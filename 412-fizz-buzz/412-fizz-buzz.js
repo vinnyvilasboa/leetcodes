@@ -60,6 +60,24 @@
     
 // };
 
+// var fizzBuzz = function(n) {
+//     return new Array(n).fill(0).map((a, i) => (++i % 3 ? '' : 'Fizz') + (i % 5 ? '' : 'Buzz') || '' + i);
+// };
+
 var fizzBuzz = function(n) {
-    return new Array(n).fill(0).map((a, i) => (++i % 3 ? '' : 'Fizz') + (i % 5 ? '' : 'Buzz') || '' + i);
+    const output = [];
+    
+    for (let i = 1; i <= n; i++) {
+        if ( i % 15 === 0 ) {
+            output.push("FizzBuzz")
+        } else if ( i % 5 === 0 ) {
+            output.push("Buzz")
+        } else if ( i % 3 === 0 ) {
+            output.push("Fizz")
+        } else {
+            output.push(String(i));
+        }
+    }
+    
+    return output;
 };
