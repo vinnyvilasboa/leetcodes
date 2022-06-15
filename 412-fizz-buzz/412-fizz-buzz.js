@@ -37,25 +37,29 @@
     
 // };
 
+// var fizzBuzz = function(n) {
+//     let res = []
+//     let map = {
+//         3: 'Fizz',
+//         5: 'Buzz'
+//     }
+    
+//     for(let i = 1; i <= n; i++){
+//         let str = '';
+//         for(let key in map){
+//             if(i % parseInt(key,10) === 0){
+//                 str += map[key]
+//             }
+//         }
+//         if(str.length === 0){
+//             str += i
+//         }
+//         res.push(str)
+//     }
+//     return res
+    
+// };
+
 var fizzBuzz = function(n) {
-    let res = []
-    let map = {
-        3: 'Fizz',
-        5: 'Buzz'
-    }
-    
-    for(let i = 1; i <= n; i++){
-        let str = '';
-        for(let key in map){
-            if(i % parseInt(key,10) === 0){
-                str += map[key]
-            }
-        }
-        if(str.length === 0){
-            str += i
-        }
-        res.push(str)
-    }
-    return res
-    
+    return new Array(n).fill(0).map((a, i) => (++i % 3 ? '' : 'Fizz') + (i % 5 ? '' : 'Buzz') || '' + i);
 };
