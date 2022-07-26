@@ -12,23 +12,23 @@
  * @param {function} isBadVersion()
  * @return {function}
  */
-var solution = function(isBadVersion) {
+let solution = function(isBadVersion) {
     /**
      * @param {integer} n Total versions
      * @return {integer} The first bad version
      */
     return function(n) {
         // binary search
-       let start = 1
-       let end = n;
-       while(start < end){
-           var mid = Math.floor((start + end) / 2);
-           if(isBadVersion(mid)){
-                end = mid; // look on left side of mid
+       let left = 1, right = n;
+       while(left < right){
+           let mid = Math.floor((left + right) / 2);
+           if(isBadVersion(mid)){ //if isBadVersion(index) === then make mid point = right
+                right = mid; // look on left side of mid
            }else{
-               start = mid+1; // look on the right side of mid
+               left = mid+1; // look on the right side of mid
            }
        }
-       return start;
+       return left;
+        //Since mid point defaults as left then by saying return left you are returning the first one(aka mid) -- we dont need anything to the right since we only need left
     };
 };
