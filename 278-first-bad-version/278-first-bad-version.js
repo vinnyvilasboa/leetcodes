@@ -21,7 +21,7 @@ var solution = function(isBadVersion) {
         // binary search
        var start = 1, end = n;
        while(start < end){
-           var mid = Math.floor(start + (end-start) / 2);
+           var mid = Math.floor((start + end) / 2);
            if(isBadVersion(mid)){
                 end = mid; // look on left side of mid
            }else{
