@@ -19,7 +19,8 @@ var solution = function(isBadVersion) {
      */
     return function(n) {
         // binary search
-       var start = 1, end = n;
+       let start = 1
+       let end = n;
        while(start < end){
            var mid = Math.floor((start + end) / 2);
            if(isBadVersion(mid)){
