@@ -13,7 +13,9 @@ var searchInsert = function(nums, target) {
     
     while (start<=end){
         const mid = Math.floor((start + end) / 2)
-        if(nums[mid] < target) {
+        if(nums[mid] < target) { 
+            //nums[3]/4 < 5
+        
             start = mid + 1
             
         }else {
