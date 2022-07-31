@@ -18,7 +18,7 @@ let solution = function(isBadVersion) {
      * @return {integer} The first bad version
      */
     return function(n) {
-        // binary search
+        // binary ,
        let left = 1, right = n;
        while(left < right){
            let mid = Math.floor((left + right) / 2);
