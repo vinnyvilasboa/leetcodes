@@ -2,21 +2,6 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-// var sortedSquares = function(nums) {
-//     /*non decreasing order, return array of square of each num*/
-//     //iterate over every number and multiply every one of them by themselves
-//     //put that into a variable 
-//     //sort them into non-decreasing order
- 
-//     for(let i = 0; i < nums.length; i++){
-//         nums[i] = nums[i] * nums[i];
-//         nums.sort(function(a,b){return a - b})
-        
-//     }
-// };
-
-//     sortedSquares([-4,-1,0,3,10])
-
 
 const sortedSquares = nums => {
     //--> Creates New Array
