@@ -19,7 +19,8 @@ let solution = function(isBadVersion) {
      */
     return function(n) {
         // binary ,
-       let left = 1, right = n;
+       let left = 1
+       let right = n;
        while(left < right){
            let mid = Math.floor((left + right) / 2);
            if(isBadVersion(mid)){ //if isBadVersion(index) === then make mid point = right
