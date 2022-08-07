@@ -5,36 +5,24 @@
  */
 
 
+// [-1,0,3,5,9,12]
+// 9
 var search = function(nums, target) {
-    let start = 0;
-    let end = nums.length - 1;
     
-    while(start <= end){ 
-                /*Set Mid Point*/
-        let mid = Math.floor((start + end) / 2);
-               /*Set mid point as index*/
-        let currentGuess = nums[mid] //since the guess will be by finding the mid point
+    let left = 0;
+    let right = nums.length - 1;
+    
+    while(left <= right){
+        let mid = Math.floor((left + right) / 2);
+        let guess = nums[mid];
         
-        /*Conditionals*/
-        if(currentGuess > target){ 
-            /*if mid point is more than the target, 
-            we need to look on the left side.
-            so we need to update the end point to the number before 
-            the mid point guess and leave the start var as is.*/
-            end = mid - 1;
-            
-        }else if(currentGuess < target){
-            /*If it's smaller than target we need to look higher on the right side, 
-            so we set the start variable as the number after the current guess */
-            start = mid + 1;
+        if(guess > target){//move left
+            right = mid - 1;
+        }else if(guess < target){//move right
+            left = mid + 1;
         }else{
-            /*if we get lucky and it's the first guess (mid) or
-            maybe the second guess being mid point then we just return the mid point.*/
-            return mid
+            return mid //if mid === target
         }
-        
     }
-            return -1
-
-    
+    return -1;
 }
